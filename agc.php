@@ -11,58 +11,6 @@
 
 add_filter('the_posts', 'rh_virtual_page' );
 
-/*function rh_virtual_page( $posts){
-
-	global $wp_query;
-
-	if (count($posts) == 0 && !is_home()) { 
-
-		$post  = new stdClass; //membuat object stdClass
-
-		$url   = trim($_SERVER['REQUEST_URI'],'/');
-		$slug  = end(explode('/',$url) );
-		$title = urldecode($slug);
-		$title = ucwords(str_replace('-', ' ', $title));
-		
-
-			$post->ID             = -999;
-			$post->post_title     = $title; //menampilakn title post
-			$post->post_content   = $data['description']; //menampilkan content
-			$post->post_author    = 1;
-			$post->comment_status = 'closed';
-			$post->comment_count  = '0';
-			$post->post_type      = 'page';
-			$post->post_name      = $url;
-
-			$posts = array($post);
-
-			$wp_query->is_page     = TRUE;
-			$wp_query->is_singular = TRUE;
-			$wp_query->is_home     = FALSE;
-			$wp_query->is_archive  = FALSE;
-			$wp_query->is_category = FALSE;
-			unset($wp_query->query['error']);
-			$wp_query->query_vars['error'] = '';
-			$wp_query->is_404 = FALSE;
-	
-		
-
-	}
-
-	return $posts;
-}*/
-
-
-
-
-
-
-
-
-
-
-
-
 function rh_virtual_page( $posts){
 
 	global $wp_query;
