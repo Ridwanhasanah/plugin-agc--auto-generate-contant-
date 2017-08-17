@@ -31,7 +31,7 @@ function rh_virtual_page( $posts){
 
 			$post->ID             = -999;
 			$post->post_title     = $title; //menampilakn title post
-			$post->post_content   = $data['description']; //menampilkan content
+			$post->post_content   = $data['description']; //menampilkan isi content
 			$post->post_author    = 1;
 			$post->comment_status = 'closed';
 			$post->comment_count  = '0';
@@ -60,6 +60,7 @@ function rh_virtual_page( $posts){
 	return $posts;
 }
 
+/*====== Isi Content yang di bungku oleh fungsi ==========*/
 function rh_get_wiki($keyword){
 
 	$url = 'https://en.wikipedia.org/w/api.php?'.
@@ -167,7 +168,8 @@ function rh_get_agc_keyword(){
 		
 		$keywords = explode(PHP_EOL, file_get_contents($file));
 		shuffle($keywords);
-		$arr = array_slice($keywords, 0, 5, true);
+		$arr = array_slice($keywords, 0, 5, true);// angka 5 adalah jumlah list yang akan di tampilkan pada widget
+
 		foreach ($arr as $key => $value) {
 			 $slug = sanitize_title($value );
 			
